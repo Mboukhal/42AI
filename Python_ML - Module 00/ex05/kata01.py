@@ -6,6 +6,5 @@ if __name__ == '__main__':
         'PHP': 'Rasmus Lerdorf',
         }
 
-    print(f'''
-        {languages[1]}
-        ''')
+    for key, val in languages.items():
+        print(f"{key} was created by {val}")
