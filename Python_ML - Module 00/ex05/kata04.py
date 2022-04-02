@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 kata = (0, 4, 132.42222, 10000, 12345.67)
 
 if __name__ == '__main__':

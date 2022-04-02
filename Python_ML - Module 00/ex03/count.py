@@ -1,5 +1,6 @@
-import string
+#! /usr/bin/env python
 
+import string
 
 def text_analyzer(*text):
     """This function counts the number of upper characters, lower characters,

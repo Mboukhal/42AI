@@ -1,56 +1,32 @@
 #! /usr/bin/env python
 
 from time import sleep
+from datetime import datetime
 
-# def ft_progress(lst):
-#     print(f"\r { * 'hi'}\n", end='\r')
-#     for x in lst:
-#         yield x
+def ft_progress(lst):
 
+    max_val = max(lst)
+    counter = 0
+    now = datetime.now()
+    time_to = 0
+    time_for_one = 0
 
-# listy = range(1000)
-# ret = 0
-# for elem in ft_progress(listy):
-#     ret += (elem + 3) % 5
-# sleep(0.5)
-# print()
-# print(ret)
+    for x in lst:
 
+        if counter == 1:
+            time_for_one = float(((str(datetime.now() - now)).split(':'))[-1])
+            time_to += time_for_one
+        time_to += time_for_one
+        counter += 1
 
-
-################################################################################################################################
-
-def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '=', printEnd = "\r"):
-    """
-    Call in a loop to create terminal progress bar
-    @params:
-        iteration   - Required  : current iteration (Int)
-        total       - Required  : total iterations (Int)
-        prefix      - Optional  : prefix string (Str)
-        suffix      - Optional  : suffix string (Str)
-        decimals    - Optional  : positive number of decimals in percent complete (Int)
-        length      - Optional  : character length of bar (Int)
-        fill        - Optional  : bar fill character (Str)
-        printEnd    - Optional  : end character (e.g. "\r", "\r\n") (Str)
-    """
-    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
-    filledLength = int(length * iteration // total)
-    bar = fill * filledLength + '>' + ' ' * (length - filledLength)
-    print(f'\r{prefix} |[{bar}] {percent}% {suffix}', end = printEnd)
-    # Print New Line on Complete
-    if iteration == total: 
-        print()
-
-# A List of Items
-items = list(range(0, 57))
-l = len(items)
-
-# Initial call to print 0% progress
-printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
-for i, item in enumerate(items):
-    # Do stuff...
-    sleep(0.1)
-    # Update Progress Bar
-    printProgressBar(i + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
-
-
+        per = int((x * 100)/max_val)
+        run = per
+        per = ((3 - len(str(per))) *  ' ') + str(per)
+        x_val = str(x)
+        x_val = ((len(str(max_val)) - len(x_val) - 1) * ' ') + x_val
+        cursore = ((run) * '=') + '>' + ((100 - run) * ' ')
+        progress = ((len(str(max_val)) - len(x_val)) * ' ') + x_val + ' / ' + str(max_val)
+        
+        print(f"\rETA:  [{per}%] [{cursore}] {progress} elapsed time {time_to:.2f}s\t\t", end='\r')
+        yield x
+    print("\n...", end='')

@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 cookbook = {
     "Sandwich's" : {
         "ingredients" : ["ham", "bread", "cheese", "tomatoes"],

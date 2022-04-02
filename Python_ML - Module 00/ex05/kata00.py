@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 t = (19,42,21)
 
 if __name__ == '__main__':

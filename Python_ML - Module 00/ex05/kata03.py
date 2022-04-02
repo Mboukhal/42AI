@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 kata = "The right format"
 
 if __name__ == '__main__':

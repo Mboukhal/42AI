@@ -1,5 +1,6 @@
-import sys
+#! /usr/bin/env python
 
+import sys
 
 def user_man():
     print("""Usage: python operations.py <number1> <number2>\

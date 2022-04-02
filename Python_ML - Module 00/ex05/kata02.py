@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 kata = (2019, 9, 25, 3, 30)
 
 if __name__ == '__main__':
@@ -7,5 +9,3 @@ if __name__ == '__main__':
             + str((4 - len(str(kata[0]))) * '0' + str(kata[0])) + ' '
             + str(kata[3] if kata[3] >= 10 else '0' + str(kata[3])) + ':'
             + str(kata[4] if kata[4] >= 10 else '0' + str(kata[4])))
-
-
